@@ -498,6 +498,22 @@ if [[ "$MACHINE" == "Mac" ]]; then
 fi
 
 ###################################################################
+# Check Dev Helper
+###################################################################
+echo -e "${C_SECTION}Dev Apps${C_NOCOLOR}"
+# --------------------------
+# Steampipe
+# --------------------------
+if ! command -v "steampipe" &>/dev/null; then
+    echo -n "${RGR_PKG_INSTALL} turbot/tap/steampipe" | "$SH_CLIP"
+    echo -e "${C_ERROR}☐ Steampipe is NOT installed.${C_NOCOLOR} It's an almost universal query cli for web services."
+    echo -e "  - Try (already in your clipboard): ${C_SCRIPT}${RGR_PKG_INSTALL} turbot/tap/steampipe${C_NOCOLOR}"
+    echo -e "  - See also https://steampipe.io/docs"
+    exit 1
+fi
+echo -e "${C_PROGRESS}✓ Your $(steampipe -v)${C_NOCOLOR}"
+
+###################################################################
 # Finalize
 ###################################################################
 echo -e "${C_SECTION}Finalize${C_NOCOLOR}"
