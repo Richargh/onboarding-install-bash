@@ -1,0 +1,10 @@
+# Onboarding Script
+
+Onboarding Script to setup a new Mac or PC. The latter is not fully functional.
+
+## How to use
+
+1. Run `./onboarding-install.sh`
+2. Follow the script suggestions
+3. If you don't like a suggestion, change the .config value to false
+
